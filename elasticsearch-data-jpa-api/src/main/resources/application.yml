@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: content-aggregation
+  data:
+    elasticsearch:
+      cluster-name: elastic_test
+      cluster-nodes: 10.50.115.16:9300
+      local: false
+      repositories:
+        enable: true
+
+logging:
+  config: classpath:log4j2.xml
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck: true
+    serviceUrl:
+      defaultZone: http://test-01.biostime.us:8084/eureka/
+
+
